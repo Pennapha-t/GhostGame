@@ -45,8 +45,15 @@ public class GameEnding : MonoBehaviour
 
     void EndLevel(CanvasGroup imageCanvas, bool doRestart)
     {
-        exitBG.gameObject.SetActive(true);
-        overBG.gameObject.SetActive(true);
+        if (isPlayerExit)
+        {
+            exitBG.gameObject.SetActive(true);
+        }
+        else
+        {
+            overBG.gameObject.SetActive(true);
+        }
+        
         timer += Time.deltaTime;
 
         exitBG.alpha = timer / fadeDuration;
